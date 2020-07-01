@@ -35,6 +35,3 @@ corr <- function(directory, threshold = 0) {
   
   return(values)
 }
-
-a <- corr('Data/specdata/', 400)
-print(head(a))
