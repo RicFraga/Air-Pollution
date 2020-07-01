@@ -10,8 +10,6 @@
 
 complete <- function(directory, id = 1:332) {
   
-  base_file_path <- directory
-  
   # Creating a matrix to generate the data frame
   
   # nrow = length(id) because thats the amount of observations we are
@@ -26,7 +24,7 @@ complete <- function(directory, id = 1:332) {
   for(index in id) {
     
     # Generating each path to access it
-    full_file_path <- build_path(base_file_path, index)
+    full_file_path <- build_path(directory, index)
 
     # Reading the data in the full file path
     data <- read_file(full_file_path)
@@ -45,6 +43,3 @@ complete <- function(directory, id = 1:332) {
   colnames(matrix_data) <- list('id', 'nobs')
   return(data.frame(matrix_data))
 }
-
-
-print(complete('Data/specdata/', 30:25))
